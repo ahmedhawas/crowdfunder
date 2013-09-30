@@ -35,6 +35,7 @@ describe "Project Listing" do
       expect(page).to have_selector('h1:first', text: project1.title)
     end
     it "should display the navigation" do
+      project1 = FactoryGirl.create(:project, :title => "Project 1")
       # Visit the root URL
       visit "/"
       # Expect the page we're on is root
@@ -51,6 +52,11 @@ describe "Project Listing" do
       # Expect the projects nav element is active
       page.should have_selector('.navbar ul li.active a', text: "Projects") 
       expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+
+      click_link 'Project 1'
+      page.should have_selector('.navbar ul li.active a', text: "Projects")
+      expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+
     end    
   end
 end
