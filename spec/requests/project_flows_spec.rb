@@ -31,10 +31,10 @@ describe "Project Listing" do
       # Visit the root URL
       visit "/"
       # Expect the page we're on is root
-      expect(current_path).to eq(root_path)
+      #expect(current_path).to eq(root_path)
       # Expect the home nav element is active
       page.should have_selector('.navbar ul li.active a', text: "Home")
-      expect(page).to have_selector('.navbar ul li.active a', text: "Home")
+      #expect(page).to have_selector('.navbar ul li.active a', text: "Home")
 
       # Click on the link to Projects
       page.find('.navbar ul').click_link('Projects')
