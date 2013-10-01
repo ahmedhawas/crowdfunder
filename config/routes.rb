@@ -1,8 +1,9 @@
 Crowdfunder::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  root :to => "projects#index"
+  root :to => "welcome#index"
   resources :projects
+  resources :users, :except => [:index]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
