@@ -1,9 +1,17 @@
 Crowdfunder::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  root :to => "welcome#index"
+
+  match "logout" => "sessions#destroy", :as => "logout"  
+  # get "login" => "sessions#new", :as => "login"  
+  # get "signup" => "users#new", :as => "signup"  
+  
   resources :projects
   resources :users, :except => [:index]
+
+  root :to => "welcome#index"
+
+  resources :sessions, :except => [:show, :update, :destroy]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
