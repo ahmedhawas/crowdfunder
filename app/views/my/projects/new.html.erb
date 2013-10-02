@@ -1,0 +1,15 @@
+<%= form_for [:my, @project] do |f| %>
+	<%= f.label "project[title]"%>
+	<%= f.text_field :title%>
+
+	<%= f.label "project[teaser]"%>
+	<%= f.text_field :teaser%>
+
+	<%= f.label "project[description]"%>
+	<%= f.text_field :description%>
+
+	<%= f.label "project[goal]"%>
+	<%= f.number_field :goal%>
+
+	<div class="actions-bigger-btn"><%= submit_tag 'Publish Project'%></div>
+<% end %>
