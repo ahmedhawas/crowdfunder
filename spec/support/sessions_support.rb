@@ -10,7 +10,6 @@ module SessionSupport
     click_button "Login"
     # Return our user when this method is called
     user
-
     # No expectations are written because testing is not done inside of a helper method
   end
 end

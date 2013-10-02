@@ -6,7 +6,10 @@ Crowdfunder::Application.routes.draw do
   # get "login" => "sessions#new", :as => "login"  
   # get "signup" => "users#new", :as => "signup"  
   
-  resources :projects
+  resources :projects do
+    resources :pledges, :only => [:new,:create]
+  end
+  
   resources :users, :except => [:index]
 
   root :to => "welcome#index"
