@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :nav_state
+
+  def nav_state
+    # To be overwritten by controllers
+  end
 
   protected
   def not_authenticated
