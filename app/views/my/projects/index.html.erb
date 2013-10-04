@@ -8,6 +8,7 @@
 	<p><%= project.goal %></p>
 	<p><%= project.teaser %></p> 
 	<p><%= link_to 'edit project', edit_my_project_path(project) %></p>
+	<%=link_to "Manage Images", my_project_images_path(project) %>
 	</div>
 	</ul>
 <%end%>
